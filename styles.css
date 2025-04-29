@@ -1,0 +1,290 @@
+/* Header Section */
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Tinos", serif;
+    background-color: #fdfdfd;
+    color: #000;
+}
+
+/* Header Section */
+header {
+    height: 640px;
+    background-color: #e4e4e4;
+    /* background: linear-gradient(180deg, #1a01ff62 0%, #0105ff52 5%, transparent 80%); */
+    overflow: hidden;
+    transition: 1s;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #ffffffe1; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    box-shadow: 0 2px 10px #00000027;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+    width: 150px;
+    height: 90px;
+}
+
+/* Navigation Menu */
+ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    border-radius: 20px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+
+ul li a:hover::before {
+    width: 100%;
+    background-color: #ff7e01;
+}
+
+/* Main Content */
+.textImg {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 100px 50px;
+    gap: 20px;
+}
+
+/* Left Side Text */
+.headtext {
+    flex: 1;
+    padding: 50px;
+}
+
+.headtext p {
+    font-size: 1.3rem;
+    color: #555;
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* Heading Styles */
+.head1, .head2 {
+    font-size: 2.9rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    color: #000;
+}
+
+.fColor {
+    color: #ff7e01;
+}
+
+.line1, .line2 {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+}
+
+/* Underline Effect */
+.inLine1, .inLine2 {
+    height: 3px;
+    border-radius: 50px;
+    background-color: #ff7e01;
+}
+
+.inLine1 {
+    width: 150px;
+    margin-top: 15px;
+}
+
+.inLine2 {
+    width: 120px;
+    margin-top: 5px;
+}
+
+/* CTA Button */
+.headbutton {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+}
+
+.headbtn {
+    width: 180px;
+    height: 50px;
+    border-radius: 45px;
+    border: 1px solid #ff7e01;
+    color: #ff7e01;
+    background: transparent;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.headbtn:hover {
+    background: #ff7e01;
+    color: #ffffff;
+}
+
+/* Right Side Image */
+.leftImg {
+    flex: 1;
+    background: url('pics/headimg.png') center/cover no-repeat;
+    height: 640px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 15px;
+    }
+
+    ul {
+        gap: 20px;
+        padding-top: 10px;
+    }
+
+    .textImg {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    .headtext {
+        padding: 20px;
+    }
+
+    .leftImg {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+
+/*featured collection*/
+
+.featured-collections {
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    color: #000000;
+    padding: 20px;
+}
+
+p {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Product Card */
+.product {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* Image Hover Effect */
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.default-img, .hover-img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.image-container:hover .hover-img {
+    opacity: 1;
+}
+
+.image-container:hover .default-img {
+    opacity: 0;
+}
+
+/* Like Button */
+.like-btn {
+    background: transparent;
+    color: #ff7e01;
+    border: 1px solid #ff7e01;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+.like-btn:hover {
+    background: #ff7e01;
+    color: #ffffff;
+}
